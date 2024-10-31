@@ -1,0 +1,14 @@
+/home/mikan/Workspace/Slot_network/bin/Debug/net8.0/Slot_network
+/home/mikan/Workspace/Slot_network/bin/Debug/net8.0/Slot_network.deps.json
+/home/mikan/Workspace/Slot_network/bin/Debug/net8.0/Slot_network.runtimeconfig.json
+/home/mikan/Workspace/Slot_network/bin/Debug/net8.0/Slot_network.dll
+/home/mikan/Workspace/Slot_network/bin/Debug/net8.0/Slot_network.pdb
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.GeneratedMSBuildEditorConfig.editorconfig
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.AssemblyInfoInputs.cache
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.AssemblyInfo.cs
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.csproj.CoreCompileInputs.cache
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.dll
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/refint/Slot_network.dll
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.pdb
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.genruntimeconfig.cache
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/ref/Slot_network.dll
