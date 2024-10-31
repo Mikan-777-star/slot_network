@@ -144,7 +144,7 @@ namespace Network
             public string? Table { get; set; }
 
             [JsonPropertyName("money")]
-            public int? Money { get; set; }
+            public int Money { get; set; }
         }
 
         public class UserAuth
@@ -228,8 +228,8 @@ namespace Network
         //鯖に登録されてる「金」の状況確認
         public async Task<int> get_user_money(){
             var resp = await ns.post_method<UserResult>(user, "/get_user_money");
-            if("success".Equals(resp.Result) && resp.Money != null){
-                return (int)resp.Money;
+            if("success".Equals(resp.Result)){
+                return resp.Money;
             }else{
                 throw new Exception("アップデートエラー、管理者に問い合わせてください");
             }
@@ -237,7 +237,7 @@ namespace Network
         //ログアウトのリクエストを送る
         //最初の一回だけ送って
         public async Task<bool> logout_request(){
-             var resp = await ns.post_method<UserResult>(user, "/token_exists");
+             var resp = await ns.post_method<UserResult>(user, "/user_Logout");
             if("success".Equals(resp.Result)){
                 return true;
             }else{
@@ -249,7 +249,7 @@ namespace Network
         //ログアウトリクエストが承認されたかを確かめるメソッド
         //間違えても↑送んないでね★
         public async Task<bool> logout_isdone(){
-             var resp = await ns.post_method<UserResult>(user, "/user_Logout");
+            var resp = await ns.post_method<UserResult>(user, "/token_exists");
             if("success".Equals(resp.Result)){
                 return "Logout successful".Equals(resp.Message);
             }else{
@@ -296,7 +296,7 @@ namespace Network
     }
 
 
-    //作れたら作る
+    //でででできた
     class Log_Sender{
         public class SendLog
         {
@@ -363,15 +363,28 @@ namespace Network
 
     // See https://aka.ms/new-console-template for more information
     internal class Myprogram{
-        static void Main(String[] args){
-            
-            var ns = new Network_sys("table_120","21382800000aasssbb");
-            var ls = new Log_Sender(ns);
-            for(int i = 0; i < 3; i++){
-                ls.log_print(i, "Hello World");
-            }
-            Console.WriteLine("エンターで終了");
-            Console.ReadLine();
-        }
+        //static async Task Main(String[] args){
+        //    
+        //    var ns = new Network_sys("table_120","21382800000aasssbb");
+        //    var account = await Account_SYS.getAccount_SYS(ns);
+        //    Console.WriteLine("ログイン");
+        //    await account.request_payment();
+        //    
+        //    while (!await account.request_payment_exists())
+        //    {
+        //        await Task.Delay(2000);
+        //    }
+        //    int money = await account.get_user_money();
+        //    money += 1000000;
+        //    await account.update_money(money);
+        //    Console.WriteLine(await account.get_user_money());
+        //    await account.logout_request();
+        //    while (!await account.logout_isdone())
+        //    {
+        //        await Task.Delay(2000);
+        //        Console.WriteLine("Hello");
+        //    }
+        //    Console.WriteLine("ALL DONE");
+        //}
     }
 }
