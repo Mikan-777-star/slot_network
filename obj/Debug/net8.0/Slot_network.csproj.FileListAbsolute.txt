@@ -12,3 +12,4 @@
 /home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.pdb
 /home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.genruntimeconfig.cache
 /home/mikan/Workspace/Slot_network/obj/Debug/net8.0/ref/Slot_network.dll
+/home/mikan/Workspace/Slot_network/obj/Debug/net8.0/Slot_network.sourcelink.json
