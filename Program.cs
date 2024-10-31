@@ -363,28 +363,28 @@ namespace Network
 
     // See https://aka.ms/new-console-template for more information
     internal class Myprogram{
-        //static async Task Main(String[] args){
-        //    
-        //    var ns = new Network_sys("table_120","21382800000aasssbb");
-        //    var account = await Account_SYS.getAccount_SYS(ns);
-        //    Console.WriteLine("ログイン");
-        //    await account.request_payment();
-        //    
-        //    while (!await account.request_payment_exists())
-        //    {
-        //        await Task.Delay(2000);
-        //    }
-        //    int money = await account.get_user_money();
-        //    money += 1000000;
-        //    await account.update_money(money);
-        //    Console.WriteLine(await account.get_user_money());
-        //    await account.logout_request();
-        //    while (!await account.logout_isdone())
-        //    {
-        //        await Task.Delay(2000);
-        //        Console.WriteLine("Hello");
-        //    }
-        //    Console.WriteLine("ALL DONE");
-        //}
+        static async Task Main(String[] args){
+            
+            var ns = new Network_sys("table_120","21382800000aasssbb");
+            var account = await Account_SYS.getAccount_SYS(ns);
+            Console.WriteLine("ログイン");
+            await account.request_payment();
+            
+            while (!await account.request_payment_exists())
+            {
+                await Task.Delay(2000);
+            }
+            int money = await account.get_user_money();
+            money += 1000000;
+            await account.update_money(money);
+            Console.WriteLine(await account.get_user_money());
+            await account.logout_request();
+            while (!await account.logout_isdone())
+            {
+                await Task.Delay(2000);
+                Console.WriteLine("Hello");
+            }
+            Console.WriteLine("ALL DONE");
+        }
     }
 }
