@@ -197,6 +197,9 @@ namespace Network
               Money = 0 
             };
             var resp = await ns.post_method<UserResult>(userauth, "/user_Login");
+            if(resp.Result != "success"){
+                throw new Exception(resp.Message);
+            }
             var newAccount_sys = new Account_SYS(resp.Token, resp.Username, resp.Password,resp.Table,ns);
             return newAccount_sys;
         }
