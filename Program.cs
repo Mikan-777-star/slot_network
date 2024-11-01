@@ -364,21 +364,31 @@ namespace Network
     // See https://aka.ms/new-console-template for more information
     internal class Myprogram{
         static async Task Main(String[] args){
-            
+            //初期化
             var ns = new Network_sys("table_120","21382800000aasssbb");
+            
+            //ログイン　getAccount_SYS(username,password,ns)でユーザログイン、このままでゲストログイン
             var account = await Account_SYS.getAccount_SYS(ns);
             Console.WriteLine("ログイン");
+
+            //入金リクエスト
             await account.request_payment();
-            
+            //入金リクエスト待ち
             while (!await account.request_payment_exists())
             {
                 await Task.Delay(2000);
             }
+            //サーバー残高取得
             int money = await account.get_user_money();
+            //金更新
             money += 1000000;
             await account.update_money(money);
+            
             Console.WriteLine(await account.get_user_money());
+
+            //ログアウトリクエスト
             await account.logout_request();
+            //リクエスト承認確認
             while (!await account.logout_isdone())
             {
                 await Task.Delay(2000);
